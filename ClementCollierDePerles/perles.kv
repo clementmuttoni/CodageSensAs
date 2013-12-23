@@ -1,0 +1,44 @@
+# -*-coding: utf-8 -*-
+#:kivy 1.7.2
+
+<Perle>:
+    size: 30, 30 
+    canvas:
+        Ellipse:
+            pos: self.pos
+            size: self.size
+
+<JeuPerles>:
+
+	perleVoyO: perleO
+	perleVoyU: perleU
+
+	canvas:
+		Rectangle:
+			pos: self.center_x/4, self.center_y-10
+			size: 20,20
+			
+		Rectangle:
+			pos: self.center_x/4, self.center_y
+			size: self.width/2, 4 
+		
+		#Ellipse:
+           # pos: self.center_x/4, self.center_y
+           # size: self.size
+			
+	Label:
+		font_size: 40  
+		center_x: root.width / 2
+		top: root.top - 30
+		text: str(root.perleVoyA.couleur)
+		
+	Perle:
+		id: perleO
+		center: self.parent.width-50, self.parent.center_y
+	
+	Perle:
+		id: perleU 
+        center: self.parent.width-50, self.parent.center_y-60
+	
+
+   
