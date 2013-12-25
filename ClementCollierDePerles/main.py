@@ -4,7 +4,7 @@ from kivy.uix.widget import Widget
 from kivy.uix.colorpicker import *
 from kivy.properties import NumericProperty, ReferenceListProperty, ObjectProperty, StringProperty
 from random import randint
-from kivy.core.audio import SoundLoader
+from kivy.core.audio import SoundLoader # pour le son
 
 class Perle(Widget):
 	couleur = NumericProperty(0)
