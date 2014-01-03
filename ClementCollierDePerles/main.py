@@ -6,33 +6,43 @@ from kivy.properties import NumericProperty, ReferenceListProperty, ObjectProper
 from random import randint
 from kivy.core.audio import SoundLoader # pour le son
 
+voyDispo = ['O', 'U']
+
 class Perle(Widget):
 	couleur = NumericProperty(0)
 	
 	
-			
-			
-			
-	
 class JeuPerles(Widget):	
 	perleVoy0 = ObjectProperty(None) #rouge
 	perleVoyU = ObjectProperty(None) #bleu
+	consigneSound = ''
 	
-	voyDispo = ['O', 'U']
 	def consigneAlea():
-		a = randint(0, voyDispo.len)
-		print(a)
+		global voyDispo
+		a = randint(0, voyDispo.__len__()-1)
+		print("Voyelle tirée au hasard  : {}".format(voyDispo[a]))
+		if a == 0:
+		    return 'rouge.wav'
+		elif a == 1:
+		    return 'bleu.wav'
+		    
+		print("élément enlevé : {}".format(voyDispo.remove(0))
+		
+	
+		    
 	
 	
-	consigneAlea()
 	
+	consigneSound = consigneAlea()
+	print("son retenu : {}".format(consigneSound))
+	print(voyDispo)
 	
+	sound = SoundLoader.load(consigneSound)
+	sound.play()
 	
-	sound = SoundLoader.load('bleu.wav')
-	if sound:
-	    print("Sound found at %s" % sound.source)
-	    print("Sound is %.3f seconds" % sound.length)
-	    sound.play()
+	 #   print("Sound found at %s" % sound.source)
+	  #  print("Sound is %.3f seconds" % sound.length)
+
 	    
 	
 	

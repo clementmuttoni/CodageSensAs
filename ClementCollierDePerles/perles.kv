@@ -15,30 +15,27 @@
 
 	canvas:
 		Rectangle:
-			pos: self.center_x/4, self.center_y-10
+			pos: self.width/2+self.center_x/2 , self.center_y-8
 			size: 20,20
 			
 		Rectangle:
-			pos: self.center_x/4, self.center_y
+			pos: self.center_x/2, self.center_y
 			size: self.width/2, 4 
 		
-		#Ellipse:
-           # pos: self.center_x/4, self.center_y
-           # size: self.size
 			
 	Label:
 		font_size: 40  
 		center_x: root.width / 2
 		top: root.top - 30
-		text: str(root.perleVoyA.couleur)
+		text: "voyelle"
 		
 	Perle:
 		id: perleO
-		center: self.parent.width-50, self.parent.center_y
+		center: 50, self.parent.center_y
 	
 	Perle:
 		id: perleU 
-        center: self.parent.width-50, self.parent.center_y-60
+        center: 50, self.parent.center_y-60
 	
 
    
