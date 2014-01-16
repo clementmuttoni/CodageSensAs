@@ -5,14 +5,10 @@ from kivy.uix.colorpicker import *
 from kivy.properties import NumericProperty, ReferenceListProperty, ObjectProperty, StringProperty
 from random import randint
 from kivy.core.audio import SoundLoader
+from kivy.uix.floatlayout import FloatLayout
 
 class Perle(Widget):
-        couleur = NumericProperty(0)
-        
-        
-                        
-                        
-                        
+        couleur = NumericProperty(0)                      
         
 class JeuPerles(Widget):        
         perleVoy0 = ObjectProperty(None) #rouge
@@ -21,11 +17,16 @@ class JeuPerles(Widget):
         voyDispo = ['O', 'U']
 
         def consigneAlea():
-                a = randint(0, voyDispo.len)
-                print(a)
+			global voyDispo
+			a = randint(0, voyDispo.len-1)
+			print(a)
+			if(a==0):
+				return "rouge.wav"
+			elif(a==1):
+				return "bleu.wav"
         
         
-       # consigneAlea()
+        #consigneAlea()
         
         
         
@@ -52,8 +53,8 @@ class JeuPerles(Widget):
 
 class PerlesApp(App):
     def build(self):
-                jeuP = JeuPerles()
-                return jeuP
+        jeuP = JeuPerles()
+        return jeuP
 
 
 if __name__ == '__main__':
