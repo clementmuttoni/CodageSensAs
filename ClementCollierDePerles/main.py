@@ -1,4 +1,4 @@
-# -*-coding: utf-8 -*-
+# -*-coding: utf-8 -*-  # TEST POUR GABRIEL
 from kivy.app import App
 from kivy.uix.widget import Widget
 from kivy.uix.colorpicker import *
@@ -33,7 +33,7 @@ class JeuPerles(Widget):
         sound = SoundLoader.load('bleu.wav')
         if sound:
             print("Sound found at %s" % sound.source)
-            print("Sound is %.3f seconds" % sound.length)
+            
             sound.play()
             
         
