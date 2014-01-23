@@ -1,4 +1,5 @@
 # -*-coding: utf-8 -*-
+#Commentaire de Gabriel pour tester
 from kivy.app import App
 from kivy.uix.widget import Widget
 from kivy.uix.colorpicker import *
